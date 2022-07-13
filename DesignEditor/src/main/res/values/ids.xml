@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="id" name="headerimageview" />
-    <item type="id" name="footerimageview" />
-    <item type="id" name="profileimageview" />
-    <item type="id" name="designationtextview" />
-    <item type="id" name="nametextview" />
-</resources>
