@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.DesignStudio">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/btn_apply"
+                android:layout_margin="5dp"
+                android:padding="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:backgroundTint="#3F51B5"
+                android:background="@drawable/update_btn_bg"
+                android:layout_gravity="right"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/tick_mark"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle_white"
+                    android:text="APPLY"
+                    android:layout_marginStart="28dp"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/warning"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#03A9F4"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:text="Editor is on please apply the changes to save"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/mainrel"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/headerRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#151414"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnheader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="@string/header"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/header"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="@string/text"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/text_box"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/gallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="@string/gallery"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/multiple_image"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/clientmaterial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="@string/footer"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/footer"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/customFooter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="@string/custom"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/customfooter"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/editorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textColor="#6C6C6C"
+            android:layout_marginBottom="120dp"
+            />
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbar"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/white"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/AppTheme.Toolbar"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/back_arrow"
+                        android:id="@+id/back"
+                        android:layout_marginEnd="5dp"
+                        android:tint="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/back"
+                        android:fontFamily="@font/sfprodisplayregular"
+                        android:text="@string/editor"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        app:titleTextAppearance="@style/ToolbarText" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_round_share_24"
+                        android:id="@+id/save"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="16dp"
+                        android:tint="@color/black"
+                        />
+
+
+                </RelativeLayout>
+
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_centerInParent="true">
+
+            <com.dis.designeditor.stickerview.StickerView
+                android:id="@+id/sticker_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1.11"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showBorder="true"
+                app:showIcons="true">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/photoBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.dis.designeditor.stickerview.StickerView
+                        android:id="@+id/sticker_view1"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/s10"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/photo_view"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:adjustViewBounds="true"
+                        android:clickable="false"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/template"                    app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/partyLogo"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="visible"
+                        app:civ_border_color="#c2c2c2"
+                        app:civ_border_width="1dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/guideline11"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+                        app:layout_constraintStart_toStartOf="@+id/guideline13"
+                        app:layout_constraintTop_toTopOf="@+id/guideline14" />
+
+                    <ImageView
+                        android:id="@+id/footer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/ic_profile"
+                        android:visibility="visible"
+                        app:civ_border_color="#c2c2c2"
+                        app:civ_border_width="1dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/guideline4"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                        app:layout_constraintStart_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+
+
+                    <ImageView
+                        android:id="@+id/header"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLength="38"
+                        android:singleLine="true"
+                        android:textColor="#000000"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                        app:layout_constraintStart_toEndOf="@+id/guideline3"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline14" />
+
+                    <LinearLayout
+                        android:id="@+id/political_Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="@+id/textView"
+                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@id/textView">
+
+
+                        <TextView
+                            android:id="@+id/position"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:maxLength="38"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/locattion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:maxLength="38"
+                            android:singleLine="true"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:textSize="14dp" />
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLength="38"
+                        android:singleLine="true"
+                        android:text="बाबाजी सीताराम लोंठे"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/guideline14" />
+
+                    <LinearLayout
+                        android:id="@+id/political_Container2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="@+id/textView2"
+                        app:layout_constraintStart_toStartOf="@+id/textView2"
+                        app:layout_constraintTop_toBottomOf="@id/textView2">
+
+
+                        <TextView
+                            android:id="@+id/position2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:maxLength="38"
+                            android:singleLine="true"
+                            android:text="बाबाजी सीताराम"
+                            android:textColor="#000000"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/locattion2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:maxLength="38"
+                            android:singleLine="true"
+                            android:textStyle="bold"
+                            android:text="बाबाजी सीताराम"
+                            android:textColor="#000000"
+                            android:textSize="14dp" />
+
+                    </LinearLayout>
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.029" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.315" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.68" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.96" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.95" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.972" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.843" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.828" />
+
+
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/footer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/guideline4">
+
+                        <TextView
+                            android:id="@+id/fb"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:drawablePadding="4dp"
+                            android:fontFamily="@font/mukta_regular"
+                            android:text="Aquib Shaikh"
+                            android:textColor="#000000"
+                            android:textSize="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/whatsapp"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/whatsapp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/mukta_regular"
+                            android:text="Aquib Shaikh"
+                            android:textColor="#000000"
+                            android:textSize="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tweet"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/fb"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tweet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:fontFamily="@font/mukta_regular"
+                            android:text="Aquib Shaikh"
+                            android:textColor="#000000"
+                            android:textSize="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/whatsapp"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <ja.burhanrashid52.photoeditor.PhotoEditorView
+                        android:id="@+id/photoEditorView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:photo_src="@android:color/transparent" />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/footerGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        app:constraint_referenced_ids="textView,partyLogo,political_Container" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </com.dis.designeditor.stickerview.StickerView>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_behavior="@string/bottom_sheet_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

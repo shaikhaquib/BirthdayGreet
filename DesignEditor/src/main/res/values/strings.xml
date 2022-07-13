@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MiPudhari</string>
+    <!--<string name="app_name">DigitalEditorApp</string>-->
+    <string name="select_font">Select font</string>
+    <string name="admob_banner_ad">ca-app-pub-2860736992349475/2064628850</string>
+    <string name="header">Header</string>
+    <string name="text">Text</string>
+    <string name="gallery">Gallery</string>
+    <string name="footer">Footer</string>
+    <string name="editor">Editor</string>
+    <string name="custom">Custom</string>
+    <string name="alert">Alert</string>
+    <string name="back_message">By Proceeding you will lose your data</string>
+    <string name="procees">Proceed</string>
+    <string name="cancel">Cancel</string>
+
+</resources>

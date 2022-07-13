@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_margin="5dp"
+    android:id="@+id/mainrel"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:text=""
+        android:layout_gravity="center"
+        android:textSize="14dp"
+        android:fontFamily="@font/segoeui"
+        android:background="@drawable/font_color_selector"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/fontbackground"
+
+        >
+            <TextView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:padding="10dp"
+        android:text=""
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:textSize="14dp"
+        android:fontFamily="@font/segoeui"
+        android:background="@color/white"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/fontcolor"
+        />
+
+    </RelativeLayout>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="color"
+        android:layout_below="@+id/fontbackground"
+        android:layout_gravity="center"
+        android:textSize="12dp"
+        android:fontFamily="@font/segoeui"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/fontname"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="color"
+        android:visibility="gone"
+        android:layout_below="@+id/fontname"
+        android:layout_gravity="center"
+        android:textSize="12dp"
+        android:fontFamily="@font/segoeui"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/fontcolorname"
+        />
+
+
+</RelativeLayout>

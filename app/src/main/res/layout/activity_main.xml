@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Select Date"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="#4D4D4D"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/date"
+            android:text="16/09/2019"
+            android:gravity="center"
+            android:drawableEnd="@drawable/ic_edit"
+            android:textSize="18sp"
+            android:textColor="#4D4D4D"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Select Client"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="#4D4D4D"
+            />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/clientList"
+            android:spinnerMode="dialog"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorPrimary"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="Refresh" />
+
+
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="Fetch Images" />
+    </LinearLayout>
+
+</LinearLayout>
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_margin="9dp"
+        android:hint="Search Name"
+        android:drawableRight="@drawable/search"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/btnasc_count"
+        android:layout_toLeftOf="@+id/btnasc_count" />
+    <TextView
+        android:id="@+id/text_view_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <!--<LinearLayout
+        android:id="@+id/lyt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+            <RelativeLayout
+                android:layout_width="360dp"
+                android:layout_height="360dp"
+                android:background="@drawable/back">
+
+                <ImageView
+                    android:id="@+id/picture"
+                    android:layout_width="107dp"
+                    android:layout_height="152dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="96dp" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="91dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/picture"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/desig"
+                    android:layout_width="91dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+    </LinearLayout>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imagelistad"/>
+</LinearLayout>

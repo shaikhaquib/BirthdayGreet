@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Samarthak Image Processing</string>
+    <string name="header">Header</string>
+    <string name="text">Text</string>
+    <string name="gallery">Gallery</string>
+    <string name="footer">Footer</string>
+    <string name="editor">Editor</string>
+    <string name="custom">Custom</string>
+    <string name="alert">Alert</string>
+    <string name="back_message">By Proceeding you will lose your data</string>
+    <string name="procees">Proceed</string>
+    <string name="cancel">Cancel</string>
+</resources>

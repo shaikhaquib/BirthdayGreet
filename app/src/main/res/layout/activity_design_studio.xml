@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.DesignStudio">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/btn_apply"
+                android:layout_margin="5dp"
+                android:padding="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:backgroundTint="#3F51B5"
+                android:background="@drawable/update_btn_bg"
+                android:layout_gravity="right"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/tick_mark"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle_white"
+                    android:text="APPLY"
+                    android:layout_marginStart="28dp"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/warning"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#03A9F4"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:text="Editor is on please apply the changes to save"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/mainrel"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/headerRel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#151414"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="@string/text"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/text_box"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/gallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="Back Gallery"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/multiple_image"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/clientmaterial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="@string/footer"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/footer"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/customFooter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:text="Front Gallery"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="9dp"
+                        android:tint="@color/white"
+                        app:icon="@drawable/multiple_image"
+                        app:iconGravity="top"
+                        app:iconSize="24dp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/editorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textColor="#6C6C6C"
+            android:layout_marginBottom="120dp"
+            />
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbar"
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/white"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/AppTheme.Toolbar"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/back_arrow"
+                        android:id="@+id/back"
+                        android:layout_marginEnd="5dp"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/back"
+                        android:fontFamily="@font/sfprodisplayregular"
+                        android:text="@string/editor"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        app:titleTextAppearance="@style/ToolbarText" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_round_share_24"
+                        android:id="@+id/save"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="16dp"
+                        android:tint="@color/black"
+                        />
+
+
+                </RelativeLayout>
+
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_centerInParent="true">
+
+            <com.image.process.stickerview.StickerView
+                android:id="@+id/sticker_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="14:17"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showIcons="true"
+                >
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/photoBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.image.process.stickerview.StickerView
+                        android:id="@+id/sticker_view1"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/s10"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:showIcons="true"/>
+
+                    <ImageView
+                        android:id="@+id/photo_view"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:adjustViewBounds="true"
+                        android:clickable="false"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/template"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/footer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <ja.burhanrashid52.photoeditor.PhotoEditorView
+                        android:id="@+id/photoEditorView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:photo_src="@android:color/transparent" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </com.image.process.stickerview.StickerView>>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_behavior="@string/bottom_sheet_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
