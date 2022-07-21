@@ -30,6 +30,23 @@ public class FontProvider {
 
         // populate fonts
         fontNameToTypefaceFile = new LinkedHashMap<>();
+        fontNameToTypefaceFile.put("Sample Font Arya Bold", "Arya-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Halant Bold", "Halant-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Hind Bold", "Hind-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font SansDevanagari Bold", "IBMPlexSansDevanagari-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Inknut Antiqua Black", "InknutAntiqua-Black.ttf");
+        fontNameToTypefaceFile.put("Sample Font Inknut Antiqua ExtraBold", "InknutAntiqua-ExtraBold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Kalam Bold", "Kalam-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font khand bold", "khand-bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Khula ExtraBold", "Khula-ExtraBold.ttf");
+        fontNameToTypefaceFile.put("Sample Font NotoSans Bold", "NotoSans-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font PalanquinDark SemiBold", "PalanquinDark-SemiBold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Rajdhani Bold", "Rajdhani-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Teko Bold", "Teko-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Teko SemiBold", "Teko-SemiBold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Tillana Bold", "Tillana-Bold.ttf");
+        fontNameToTypefaceFile.put("Sample Font Yantramanav Black", "Yantramanav-Black.ttf");
+        fontNameToTypefaceFile.put("Sample Font Yantramanav Bold", "Yantramanav-Bold.ttf");
         fontNameToTypefaceFile.put("Sample Font devnew", "devnew.ttf");
         fontNameToTypefaceFile.put("Sample Font Roupya", "roupya.ttf");
         fontNameToTypefaceFile.put("Sample Font sharada", "sharada.TTF");
@@ -45,6 +62,7 @@ public class FontProvider {
         fontNameToTypefaceFile.put("Sample Amita Bold", "Amita-Bold.ttf");
         fontNameToTypefaceFile.put("Sample Poppins ExtraBold", "Poppins-ExtraBold.ttf");
         fontNameToTypefaceFile.put("Sample RozhaOne Regular", "RozhaOne-Regular.ttf");
+        fontNameToTypefaceFile.put("Sample Eczar SemiBold", "Eczar-SemiBold.ttf");
         fontNameToTypefaceFile.put("Sample Eczar-ExtraBold", "Eczar-ExtraBold.ttf");
         fontNameToTypefaceFile.put("Sample Laila-Bold", "Laila-Bold.ttf");
 

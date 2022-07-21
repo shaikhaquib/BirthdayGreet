@@ -38,6 +38,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,6 +56,7 @@ import com.bumptech.glide.signature.ObjectKey;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.card.MaterialCardView;
 import com.google.gson.Gson;
 import com.image.process.R;
 import com.image.process.Test;
@@ -122,7 +124,7 @@ public class DesignStudio extends AppCompatActivity implements View.OnClickListe
     public static FontProvider fontProvider;
     public static List<String> fonts = new ArrayList<>();
     TextShadow textShadow=new TextShadow(2,2,2,Color.parseColor("#000000"));
-
+    int footerSelectedPosition = -1 ;
     private void requestAppPermissions() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             return;
@@ -293,9 +295,15 @@ public class DesignStudio extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
+                        Log.d("Footer ", "onResponse: "+ response);
                         Gson gson = new Gson();
                         HeaderResponse m = gson.fromJson(response, HeaderResponse.class);
-                        footerList = m.getAllDetailsOfClient();
+                        footerList.clear();
+                        for  (AllDetailsOfClientItem itemfooter:m.getAllDetailsOfClient()) {
+                            if (itemfooter != null)
+                            footerList.add(itemfooter);
+                        }
+
 
                     }
                 }, new Response.ErrorListener() {
@@ -932,7 +940,9 @@ public class DesignStudio extends AppCompatActivity implements View.OnClickListe
             bottomSheetDialog.getWindow().setDimAmount(0f);
             bottomSheetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         }
-        bottomSheetDialog.setCancelable(false);
+        bottomSheetDialog.setCancelable(true);
+        bottomSheetDialog.getBehavior().setPeekHeight(800,true);
+
 
         ImageView btnCancel = bottomSheetDialog.findViewById(R.id.btnCancel);
         RecyclerView rvFooter = bottomSheetDialog.findViewById(R.id.rvFooter);
@@ -972,20 +982,28 @@ public class DesignStudio extends AppCompatActivity implements View.OnClickListe
                             .into(viewHolder.footer);
                 }
 
+                if (footerSelectedPosition == position){
+                    viewHolder.footerBack.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                }else {
+                    viewHolder.footerBack.setCardBackgroundColor(getResources().getColor(R.color.white));
+                }
+
                 viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
 
                         if (footerList.get(position) != null) {
+                            footerSelectedPosition  = position ;
                             Glide.with(getApplicationContext())
                                     .load(footerList.get(position).getHeader())
                                     // .transition(GenericTransitionOptions.with(animationObject))
                                     .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL).signature(new ObjectKey(0)))
                                     .into(binding.footer);
-                      }else {
+                        } else {
                             Toast.makeText(DesignStudio.this, "Image not available", Toast.LENGTH_SHORT).show();
                         }
+                        notifyDataSetChanged();
                     }
                 });
 
@@ -998,10 +1016,12 @@ public class DesignStudio extends AppCompatActivity implements View.OnClickListe
 
             class ViewHolder extends RecyclerView.ViewHolder {
                 final ImageView footer;
+                final MaterialCardView footerBack;
 
                 public ViewHolder(@NonNull @NotNull View itemView) {
                     super(itemView);
                     footer = itemView.findViewById(R.id.footer);
+                    footerBack = itemView.findViewById(R.id.background);
                 }
             }
         });
