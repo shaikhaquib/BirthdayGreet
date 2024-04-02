@@ -287,7 +287,7 @@ public class DesignStudio extends AppCompatActivity implements View.OnClickListe
     private void getFooters() {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://103.14.99.175/icreate/clientheader.php";
+        String url = "http://192.168.0.254:8080/icreate/API/Client_Det_And_HeaderImage.php";
 
 // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,

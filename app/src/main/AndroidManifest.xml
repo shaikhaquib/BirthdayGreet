@@ -23,14 +23,14 @@
         <activity
             android:name=".designeditor.activity.ImageListActivty"
             android:exported="true"
-            android:theme="@style/AppThemeNoActionBar" >
-            <intent-filter>
+            android:theme="@style/AppThemeNoActionBar" />
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-        </activity>
+        </activity>-->
         <activity
             android:name=".designeditor.activity.DesignStudio"
             android:exported="true"
@@ -38,7 +38,14 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"

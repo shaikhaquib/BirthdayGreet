@@ -35,7 +35,7 @@ class ImageListActivty : AppCompatActivity() {
     private fun getTemplate() {
 
         val queue = Volley.newRequestQueue(this)
-        val url = "http://103.14.99.175/icreate/birthdaybase.php";
+        val url = "http://192.168.0.254:8080/icreate/API/BirthdayBaseImageListAPI.php"
 
 // Request a string response from the provided URL.
         val stringRequest = StringRequest(
