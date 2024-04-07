@@ -58,4 +58,15 @@
         <!-- <item name="android:windowBackground">@color/yourWindowBackgroundColor</item>-->
     </style>
 
+    <style name="AppEditTextCarbonElevated">
+        <item name="android:textSize">@dimen/_16_dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:padding">@dimen/_16_dp</item>
+        <item name="android:drawablePadding">@dimen/_16_dp</item>
+        <item name="drawableTint">@color/black</item>
+    </style>
+
 </resources>

@@ -946,6 +946,32 @@ public class DesignStudio extends AppCompatActivity implements View.OnClickListe
 
         ImageView btnCancel = bottomSheetDialog.findViewById(R.id.btnCancel);
         RecyclerView rvFooter = bottomSheetDialog.findViewById(R.id.rvFooter);
+        ImageView btnClose = bottomSheetDialog.findViewById(R.id.btnClose);
+        EditText edtSearch = bottomSheetDialog.findViewById(R.id.edtSearch);
+
+        btnClose.setOnClickListener(view -> {
+            edtSearch.getText().clear();
+        });
+
+        FooterAdapter footerAdapter = new FooterAdapter(this,footerList);
+
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Not used, but you must override it
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                footerAdapter.filter(edtSearch.getText().toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Not used, but you must override it
+            }
+        });
+
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -954,78 +980,7 @@ public class DesignStudio extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        rvFooter.setAdapter(new RecyclerView.Adapter() {
-            @NonNull
-            @NotNull
-            @Override
-            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-                return new ViewHolder(LayoutInflater.from(DesignStudio.this).inflate(R.layout.item_footer, parent, false));
-            }
-
-            @Override
-            public void onBindViewHolder(@NonNull @NotNull RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-                ViewHolder viewHolder = (ViewHolder) holder;
-
-                if (footerList.get(position) != null) {
-                    Glide.with(getApplicationContext())
-                            .load(footerList.get(position).getHeader())
-                            // .transition(GenericTransitionOptions.with(animationObject))
-                            .placeholder(R.color.white)
-                            .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL).signature(new ObjectKey(0)))
-                            .into(viewHolder.footer);
-                }else {
-                    Glide.with(getApplicationContext())
-                            .load(R.color.white)
-                            // .transition(GenericTransitionOptions.with(animationObject))
-                            .placeholder(R.color.white)
-                            .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL).signature(new ObjectKey(0)))
-                            .into(viewHolder.footer);
-                }
-
-                if (footerSelectedPosition == position){
-                    viewHolder.footerBack.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                }else {
-                    viewHolder.footerBack.setCardBackgroundColor(getResources().getColor(R.color.white));
-                }
-
-                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-
-                        if (footerList.get(position) != null) {
-                            footerSelectedPosition  = position ;
-                            Glide.with(getApplicationContext())
-                                    .load(footerList.get(position).getHeader())
-                                    // .transition(GenericTransitionOptions.with(animationObject))
-                                    .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL).signature(new ObjectKey(0)))
-                                    .into(binding.footer);
-                        } else {
-                            Toast.makeText(DesignStudio.this, "Image not available", Toast.LENGTH_SHORT).show();
-                        }
-                        notifyDataSetChanged();
-                    }
-                });
-
-            }
-
-            @Override
-            public int getItemCount() {
-                return footerList.size();
-            }
-
-            class ViewHolder extends RecyclerView.ViewHolder {
-                final ImageView footer;
-                final MaterialCardView footerBack;
-
-                public ViewHolder(@NonNull @NotNull View itemView) {
-                    super(itemView);
-                    footer = itemView.findViewById(R.id.footer);
-                    footerBack = itemView.findViewById(R.id.background);
-                }
-            }
-        });
-
+        rvFooter.setAdapter(footerAdapter);
 
         bottomSheetDialog.show();
     }
